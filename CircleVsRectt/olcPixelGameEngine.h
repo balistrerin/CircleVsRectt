@@ -716,6 +716,16 @@ int main()
 				return (this->x == rhs.x && this->y == rhs.y);
 			}
 
+			v_2d operator+(const v_2d& other) const {
+				return { x + other.x, y + other.y };
+			}
+
+			v_2d& operator+=(const v_2d& other) {
+				x += other.x;
+				y += other.y;
+				return *this;
+			}
+
 			// Compare if this vector is not numerically equal to another
 			inline constexpr bool operator != (const v_2d& rhs) const
 			{
